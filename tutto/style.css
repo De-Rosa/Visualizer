@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#sidebar {
+    height: 100vh;
+    width: 420px;
+    background-color: white;
+    box-shadow: 5px 0 5px lightgray;
+    z-index: 1;
+    position: relative;
+    float: left;
+    overflow-y: auto;
+}
+
+.math-input {
+    width: inherit;
+    display: flex;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 3;
+    white-space: nowrap;
+}
+
+.additional-box {
+    width: 100%;
+    overflow: hidden;
+    height: 5%;
+    background-color: #ffffff;
+    z-index: 3;
+    color: #313131;
+    font-weight: 200;
+    font-size: 100%;
+    line-height: 150%;
+    font-family: system-ui;
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+    opacity: 60%;
+    white-space: nowrap;
+}
+
+#pill {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    height: 60px;
+    width: 160px;
+    text-align: center;
+    display: flex;
+    left: 450px;
+    bottom: 3vh;
+    position: fixed;
+    z-index: 5;
+}
+
+#divider {
+    border-radius: 50px;
+    border: none;
+    width: 10%;
+    height: inherit;
+    background: linear-gradient(#E3E3E3, #E3E3E3) no-repeat center/2px 60%;
+}
+
+#left-selector {
+    width: 45%;
+    padding-top: 15px;
+    height: 80%;
+    cursor: pointer;
+}
+
+#right-selector {
+    width: 45%;
+    padding-top: 15px;
+    height: 80%;
+    cursor: pointer;
+}
+
+img {
+    height: 25px;
+    object-fit: scale-down;
+}
+
+.math-input >:last-child {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.exit-input {
+    line-height: 350%;
+    width: 10%;
+    float: right;
+    height: inherit;
+    color: #8f8f8f;
+    opacity: 50%;
+    font-family: system-ui;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    transition: color 200ms;
+    font-weight: 100;
+    font-size: 130%;
+    z-index: 2;
+}
+
+.text-input {
+    display: inline-block;
+    height: inherit;
+    width: 100%;
+    border: none;
+    min-height: 8vh;
+    box-sizing: border-box;
+    padding: 2px;
+    font-size: 20px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0;
+    text-align: center;
+}
+
+.mq-textarea {
+    opacity: 0;
+}
+
+.exit-input:hover {
+    color: #000000;
+}
+
+#add-input {
+    height: 3vh;
+    position: absolute;
+    width: inherit;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: 100;
+    font-size: 130%;
+    color: #8f8f8f;
+    transition: background-color 200ms;
+    cursor: pointer;
+    background-color: #e8e8e8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 2;
+}
+
+#add-input:hover {
+    background-color: #d7d7d7;
+}
+
+#dimension-selector {
+    right: 1.5vw;
+    bottom: 3vh;
+    align-items: center;
+    background-color: #FAFAFA;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    position: fixed;
+    font-family: system-ui;
+    transition: background-color 200ms;
+    font-weight: 200;
+    font-size: 120%;
+    padding: 20px 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 2;
+}
+
+.toolbox-item {
+    width: inherit;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 3;
+    white-space: nowrap;
+    height: 5vh;
+    padding-top: 1vh;
+    font-weight: 200;
+    color: #8f8f8f;
+    font-size: 130%;
+    line-height: 150%;
+    font-family: system-ui;
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+}
+
+.toolbox-drop-down {
+    width: 100%;
+    overflow: hidden;
+    height: 5%;
+    background-color: #ffffff;
+    z-index: 3;
+    color: #313131;
+    font-weight: 200;
+    font-size: 100%;
+    line-height: 150%;
+    font-family: system-ui;
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+    opacity: 60%;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #F0F0F0;
+}

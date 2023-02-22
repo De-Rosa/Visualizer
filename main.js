@@ -46,15 +46,15 @@ document.clearPure = function () {
     renderer.domElement.remove()
 }
 
-document.startPure = async function() {
+document.startPure = function() {
     document.clearMechanics();
     document.clearStats()
 
     setup()
     setupControls()
-    await setup2DGraph()
+    setup2DGraph()
     renderText2D()
-    await convertObjectsTo2D()
+    convertObjectsTo2D()
 }
 
 function animate() {
@@ -63,7 +63,7 @@ function animate() {
     TWEEN.update()
 }
 
-async function setup2DGraph() {
+function setup2DGraph() {
     controls.enablePan = true;
     controls.enableRotate = false;
 
@@ -79,7 +79,7 @@ async function setup2DGraph() {
     draw2DGraphLines()
 }
 
-async function setup3DGraph() {
+function setup3DGraph() {
     controls.enablePan = false;
     controls.enableRotate = true;
 
@@ -147,7 +147,7 @@ function clearText() {
     text = []
 }
 
-async function convertObjectsTo2D() {
+function convertObjectsTo2D() {
     var length = objects.length;
     for (let i=0; i<length; i++) {
         scene.remove(objects[i])
@@ -157,7 +157,7 @@ async function convertObjectsTo2D() {
     }
 }
 
-async function convertObjectsTo3D() {
+function convertObjectsTo3D() {
     var length = objects.length;
     for (let i=0; i<length; i++) {
         scene.remove(objects[i])
@@ -167,38 +167,38 @@ async function convertObjectsTo3D() {
     }
 }
 
-async function moveTo2D() {
+function moveTo2D() {
     const coordinates = new three.Vector3(0, 0, 20);
-    await convertObjectsTo2D()
-    await interpolateMovement(coordinates)
-    await setup2DGraph()
+    convertObjectsTo2D()
+    interpolateMovement(coordinates)
+    setup2DGraph()
     renderText2D()
     document.redrawAllObjects()
 }
 
-async function moveTo3D() {
+function moveTo3D() {
     const coordinates = new three.Vector3(20, 20, 20);
-    await convertObjectsTo3D()
-    await interpolateMovement(coordinates)
-    await setup3DGraph()
+    convertObjectsTo3D()
+    interpolateMovement(coordinates)
+    setup3DGraph()
     renderText3D()
     document.redrawAllObjects()
 }
 
-document.toggleDimension = async function () {
+document.toggleDimension = function () {
     let selector = document.getElementById("dimension-selector")
     if (currentDimension === "2D") {
         currentDimension = "3D"
         selector.textContent = "2D"
-        await moveTo3D()
+        moveTo3D()
     } else {
         currentDimension = "2D"
         selector.textContent = "3D"
-        await moveTo2D()
+        moveTo2D()
     }
 }
 
-async function interpolateMovement(targetPosition) {
+function interpolateMovement(targetPosition) {
     var position = new three.Vector3().copy( camera.position );
     var duration = 1000
     controls.target = new three.Vector3(0, 0, 0)
@@ -521,13 +521,13 @@ function expandBox(additionalBox) {
 }
 
 
-async function init() {
+function init() {
     setup()
     setupControls()
-    await setup2DGraph()
+    setup2DGraph()
     renderText2D()
-    await convertObjectsTo2D()
+    convertObjectsTo2D()
     animate()
 }
 
-await init()
+init()

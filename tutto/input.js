@@ -1,3 +1,7 @@
+import pureImg from "/pure.png"
+import statsImg from "/statistics.png"
+import mechanicsImg from "/mechanics.png"
+
 var mathFields = []
 document.activeMode = "pure"
 
@@ -188,8 +192,6 @@ function onButtonClick() {
 }
 
 function clickLeftButton(e) {
-    let src;
-
     let icon;
     if (e.target === document.getElementById("left-selector")) {
         icon = e.target.getElementsByClassName("icon")[0]
@@ -197,12 +199,10 @@ function clickLeftButton(e) {
         icon = e.target
     }
 
-    animateSwitch(icon, src)
+    animateSwitch(icon)
 }
 
 function clickRightButton(e) {
-    let src;
-
     let icon;
     if (e.target === document.getElementById("right-selector")) {
         icon = e.target.getElementsByClassName("icon")[0]
@@ -210,13 +210,24 @@ function clickRightButton(e) {
         icon = e.target
     }
 
-    animateSwitch(icon, src)
+    animateSwitch(icon)
 }
 
-function animateSwitch(icon, src) {
+function animateSwitch(icon) {
 
     let previousMode = document.activeMode
-    src = "public/" + previousMode + ".png"
+    let src;
+    switch (previousMode) {
+        case "statistics":
+            src = statsImg
+            break
+        case "pure":
+            src = pureImg
+            break
+        case "mechanics":
+            src = mechanicsImg
+            break
+    }
     document.activeMode = icon.parentElement.active
     icon.parentElement.active = previousMode
 

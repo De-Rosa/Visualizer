@@ -300,7 +300,6 @@ function createMechanicsSideBar() {
 
 function clearSidebar() {
     document.getElementById("sidebar").replaceChildren()
-    console.log(document.getElementById("dimension-selector"))
     if (document.getElementById("dimension-selector") !== null) {
         document.getElementById("dimension-selector").remove()
     }

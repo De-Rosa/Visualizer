@@ -285,16 +285,13 @@ function createPureSidebar() {
 
 function createMechanicsSideBar() {
     let toolboxItems = ["Slope Object", "Train Object", "Pulley Object", "Ladder Object"]
+    let events = [document.startSlopeObject, document.startSlopeObject, document.startSlopeObject, document.startSlopeObject]
     for (let i = 0; i < toolboxItems.length; i++) {
         let toolBoxItem = document.createElement("div")
         toolBoxItem.className = "toolbox-item"
         toolBoxItem.textContent = toolboxItems[i]
         document.getElementById("sidebar").appendChild(toolBoxItem)
-
-        let dropDown = document.createElement("div")
-        dropDown.className = "toolbox-drop-down"
-        dropDown.style.height = "0px"
-        document.getElementById("sidebar").appendChild(dropDown)
+        toolBoxItem.addEventListener("click", events[i])
     }
 }
 

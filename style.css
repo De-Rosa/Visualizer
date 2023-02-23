@@ -190,6 +190,7 @@ img {
     font-weight: 200;
     color: #8f8f8f;
     font-size: 130%;
+    cursor: pointer;
     line-height: 150%;
     font-family: system-ui;
     vertical-align: center;
@@ -197,24 +198,16 @@ img {
     align-items: center;
 }
 
-.toolbox-drop-down {
-    width: 100%;
-    overflow: hidden;
-    height: 5%;
-    background-color: #ffffff;
-    z-index: 3;
-    color: #313131;
+#back {
+    position: absolute;
+    z-index: 5;
     font-weight: 200;
-    font-size: 100%;
-    line-height: 150%;
-    font-family: system-ui;
-    vertical-align: center;
-    text-align: center;
-    align-items: center;
-    opacity: 60%;
-    white-space: nowrap;
+    color: #000000;
+    font-size: 170%;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
 }
-
 button:hover {
     background-color: #F0F0F0;
 }

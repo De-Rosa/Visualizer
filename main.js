@@ -33,7 +33,7 @@ function setup() {
     renderer.setSize(width, height);
     document.body.appendChild(renderer.domElement);
 
-    camera = new three.PerspectiveCamera( 45, width / height, 1, 500 );
+    camera = new three.PerspectiveCamera( 45, width / height, 1, 60 );
 }
 
 document.clearPure = function () {

@@ -35,34 +35,8 @@ function createField() {
     animateExit(exit)
 }
 
-document.createMatrixField = function () {
-    let field = document.createElement("div")
-    field.className = "math-input matrix"
-    document.getElementById("sidebar").appendChild(field)
-
-    // replace exit with a dropdown box with options (create matrix, create vector)
-    let exit = document.createElement("div")
-    exit.className = "exit-input"
-    exit.textContent = "x"
-    exit.style.opacity = "0%"
-    field.appendChild(exit)
-    exit.addEventListener("click", onExitClick)
-
-    let input = document.createElement("span")
-    input.className = "text-input"
-    field.appendChild(input)
-    input.addEventListener("keyup", matrixListener)
-
-    let mathField = MQ.MathField(input, {
-        spaceBehavesLikeTab: true,
-    })
-    mathFields.push(mathField)
-    mathField.latex("\\begin{bmatrix}&&\\\\&&\\\\&&\\end{bmatrix}");
-    animateExit(exit)
-}
-
-function matrixListener () {
-
+document.clearMathsFields = function () {
+    mathFields = []
 }
 
 function createButton() {

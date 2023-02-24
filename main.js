@@ -42,6 +42,7 @@ document.clearPure = function () {
     objectsPoints = []
     objects = []
     text = []
+    document.clearMathsFields()
     currentDimension = "2D"
     renderer.domElement.remove()
 }
